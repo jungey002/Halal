@@ -47,7 +47,7 @@ public class CRUDController implements Initializable {
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUser,
                 dbPassword)) {
             // Execute a SQL query to retrieve data from the database
-            String query = "SELECT * FROM user";
+            String query = "SELECT * FROM login_tbl";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             // Populate the table with data from the database
@@ -86,13 +86,13 @@ public class CRUDController implements Initializable {
 
 
 
-        String jdbcUrl = "jdbc:mysql://localhost:3306/db_csd214_lab2";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/db_csd214_lab3";
         String dbUser = "root";
         String dbPassword = "";
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUser,
                 dbPassword)) {
             // Execute a SQL query to retrieve data from the database
-            String query = "INSERT INTO `user`( `name`, `email`, `password`) VALUES ('"+name+"','"+email+"','"+password+"')";
+            String query = "INSERT INTO `login_tbl`( `name`, `email`, `password`) VALUES ('"+name+"','"+email+"','"+password+"')";
             Statement statement = connection.createStatement();
             statement.execute(query);
             // Populate the table with data from the database
@@ -113,13 +113,13 @@ public class CRUDController implements Initializable {
 
 
 
-        String jdbcUrl = "jdbc:mysql://localhost:3306/db_csd214_lab2";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/db_csd214_lab3";
         String dbUser = "root";
         String dbPassword = "";
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUser,
                 dbPassword)) {
             // Execute a SQL query to retrieve data from the database
-            String query = "UPDATE `user` SET `name`='"+name+"',`email`='"+email+"',`password`='"+password+"' WHERE id='"+id+"' ";
+            String query = "UPDATE `login_tbl` SET `name`='"+name+"',`email`='"+email+"',`password`='"+password+"' WHERE id='"+id+"' ";
             Statement statement = connection.createStatement();
             statement.execute(query);
             // Populate the table with data from the database
@@ -136,13 +136,13 @@ public class CRUDController implements Initializable {
 
 
 
-        String jdbcUrl = "jdbc:mysql://localhost:3306/db_csd214_lab2";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/db_csd214_lab3";
         String dbUser = "root";
         String dbPassword = "";
         try (Connection connection = DriverManager.getConnection(jdbcUrl, dbUser,
                 dbPassword)) {
             // Execute a SQL query to retrieve data from the database
-            String query = "DELETE FROM `user` WHERE id='"+id+"'";
+            String query = "DELETE FROM `login_tbl` WHERE id='"+id+"'";
             Statement statement = connection.createStatement();
             statement.execute(query);
             // Populate the table with data from the database
